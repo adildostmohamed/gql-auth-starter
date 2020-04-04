@@ -16,5 +16,17 @@
   "bugs": {
     "url": "https://github.com/adildostmohamed/gql-auth-starter/issues"
   },
-  "homepage": "https://github.com/adildostmohamed/gql-auth-starter#readme"
+  "homepage": "https://github.com/adildostmohamed/gql-auth-starter#readme",
+  "dependencies": {
+    "apollo-server": "^2.11.0",
+    "bcrypt": "^4.0.1",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^2.0.2"
+  }
 }
