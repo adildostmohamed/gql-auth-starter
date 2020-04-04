@@ -1,0 +1,20 @@
+{
+  "name": "gql-auth-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adildostmohamed/gql-auth-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adildostmohamed/gql-auth-starter/issues"
+  },
+  "homepage": "https://github.com/adildostmohamed/gql-auth-starter#readme"
+}
