@@ -1,3 +1,4 @@
+const merge = require("lodash.merge");
 // import app resouces to construct gql server
 const user = require("./resources/user");
 
@@ -5,7 +6,7 @@ const user = require("./resources/user");
 const typeDefs = [user.typeDefs].join(" ");
 
 // combine resolvers from all resources
-const resolvers = Object.assign({}, user.resolvers);
+const resolvers = merge(user.resolvers);
 
 // combine models from all resources
 const models = {
