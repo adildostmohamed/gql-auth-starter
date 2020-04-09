@@ -1,4 +1,5 @@
 const { AuthenticationError } = require("apollo-server");
+const bcrypt = require("bcrypt");
 
 const currentUser = (parent, args, ctx, info) => {
   return ctx.user;
@@ -72,8 +73,19 @@ const login = async (_, args, ctx) => {
   if (!user) {
     throw new AuthenticationError("Wrong email and password combination");
   }
-  const token = ctx.createUserToken(user);
-  return { user, token };
+  try {
+    const isPasswordMatch = await bcrypt.compare(
+      args.input.password,
+      user.password
+    );
+    if (!isPasswordMatch) {
+      throw new AuthenticationError("Wrong email and password combination");
+    }
+    const token = ctx.createUserToken(user);
+    return { user, token };
+  } catch (e) {
+    throw new AuthenticationError("Wrong email and password combination");
+  }
 };
 
 module.exports = {
