@@ -14,8 +14,8 @@ const server = new ApolloServer({
   resolvers,
   schemaDirectives,
   context: async ({ req }) => {
-    const token = req.headers.authorization;
-    const user = await getUserFromToken(token);
+    const authHeader = req.headers.authorization;
+    const user = await getUserFromToken(authHeader);
     return { models, user, createUserToken };
   },
 });

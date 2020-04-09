@@ -9,8 +9,8 @@ interface IProtectedRouteProps extends RouteProps {
 // can be made more advanced
 const checkForAuthToken = (): boolean => {
   const token = localStorage.getItem("token");
-  if (!token) return false;
-  return true;
+  if (token) return true;
+  return false;
 };
 
 const ProtectedRoute = ({
